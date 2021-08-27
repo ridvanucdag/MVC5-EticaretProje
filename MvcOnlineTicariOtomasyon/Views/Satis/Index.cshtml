@@ -1,0 +1,61 @@
+﻿@using MvcOnlineTicariOtomasyon.Models.Siniflar
+@model List<SatisHareket>
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/AdminLayout.cshtml";
+}
+<br />
+<h2>Yapılan Satişlar</h2>
+<a href="/Satis/HepsiniYazdir/" class="btn btn-default" style="background-color:dodgerblue">Hepsini Yazdır</a>
+<br />
+<br />
+<table id="tablo1" class="table table-hover">
+    
+    <thead>
+        
+        <tr>
+            <th>Satış ID</th>
+            <th>Ürün</th>
+            <th>Satan Personel</th>
+            <th>Ürünü Alan</th>
+            <th>Fiyat</th>
+            <th>Adet</th>
+            <th>Toplam</th>
+            <th>Tarih</th>
+            <th>Güncelle</th>
+            <th>Yazdır</th>
+        </tr>
+    </thead>
+
+    @foreach (var x in Model)
+    {
+        <tr>
+            <td>@x.SatisID</td>
+            <td>@x.Urun.UrunAd</td>
+            <td>@x.Personel.PersonelAd @x.Personel.PersonelSoyad</td>
+            <td>@x.Cariler.CariAd @x.Cariler.CariSoyad</td>
+            <td>@x.Fiyat</td>
+            <td>@x.Adet</td>
+            <td>@x.ToplamTutar</td>
+            <td>@x.Tarih</td>
+            <td><a href="/Satis/SatisGetir/@x.SatisID" class="btn btn-success">Güncelle</a></td>
+            <td><a href="/Satis/SatisYazdir/@x.SatisID" class="btn btn-default" style="background-color:dodgerblue">Yazdır</a></td>
+        </tr>
+    }
+</table>
+<a href="/Satis/YeniSatis/" class="btn btn-primary">Yeni Satış Ekle</a>
+
+@*<link href="~/Content/bootstrap.css" rel="stylesheet" />*@
+<script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+
+<link href="https://cdn.datatables.net/1.10.15/css/dataTables.bootstrap.min.css" rel="stylesheet" />
+<link href="https://cdn.datatables.net/responsive/2.1.1/css/responsive.bootstrap.min.css" rel="stylesheet" />
+<script src="https://cdn.datatables.net/1.10.15/js/jquery.dataTables.min.js"></script>
+<script src="https://cdn.datatables.net/1.10.15/js/dataTables.bootstrap4.min.js "></script>
+
+<script>
+    $('#tablo1').dataTable({});
+</script>
+
+
+

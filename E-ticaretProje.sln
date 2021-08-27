@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.30611.23
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "OnlineticaretiProje", "MvcOnlineTicariOtomasyon\OnlineticaretiProje.csproj", "{42BBC3EF-4ACF-4091-8189-9B9554415CEC}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{42BBC3EF-4ACF-4091-8189-9B9554415CEC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{42BBC3EF-4ACF-4091-8189-9B9554415CEC}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{42BBC3EF-4ACF-4091-8189-9B9554415CEC}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{42BBC3EF-4ACF-4091-8189-9B9554415CEC}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {A5D0D08F-30EA-4478-B4AC-B7BFA2F0B88C}
+	EndGlobalSection
+EndGlobal

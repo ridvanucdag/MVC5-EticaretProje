@@ -1,0 +1,98 @@
+﻿@model MvcOnlineTicariOtomasyon.Models.Siniflar.Cariler
+
+@using (Html.BeginForm("CariBilgiGuncelle", "CariPanel", FormMethod.Post))
+{
+
+
+<form class="form-horizontal">
+
+    @Html.HiddenFor(x=>x.CariID)
+
+    <div class="form-group row">
+
+        <label for="inputName" class="col-sm-2 col-form-label">Ad</label>
+
+        <div class="col-sm-10">
+
+            @*<input type="text" name="CariAd" class="form-control" id="inputName" placeholder="Adınız">*@
+            @Html.TextBoxFor(x => x.CariAd, new { @class = "form-control" })
+
+        </div>
+
+    </div>
+
+    <div class="form-group row">
+
+        <label for="inputName" class="col-sm-2 col-form-label">Soyad</label>
+
+        <div class="col-sm-10">
+
+            @*<input type="text" name="CariAd" class="form-control" id="inputName" placeholder="Adınız">*@
+            @Html.TextBoxFor(x => x.CariSoyad, new { @class = "form-control" })
+
+        </div>
+
+    </div>
+
+    <div class="form-group row">
+
+        <label for="inputName" class="col-sm-2 col-form-label">Şehir</label>
+
+        <div class="col-sm-10">
+
+            @*<input type="text" name="CariAd" class="form-control" id="inputName" placeholder="Adınız">*@
+            @Html.TextBoxFor(x => x.CariSehir, new { @class = "form-control" })
+
+        </div>
+
+    </div>
+
+    <div class="form-group row">
+
+        <label for="inputEmail" class="col-sm-2 col-form-label">Email Adresiniz</label>
+
+        <div class="col-sm-10">
+
+            @*<input type="email" name="CariMail" class="form-control" id="inputEmail" placeholder="Mail Adresiniz">*@
+            @Html.TextBoxFor(x => x.CariMail, new { @class = "form-control", @readonly = "readonly" })
+
+        </div>
+
+    </div>
+
+    <div class="form-group row">
+
+        <label for="inputName2" class="col-sm-2 col-form-label">Şifre</label>
+
+        <div class="col-sm-10">
+
+            <input type="password" name="CariSifre" class="form-control" id="inputName2" placeholder="Şifre">
+
+        </div>
+
+    </div>
+
+    <div class="form-group row">
+
+        <label for="inputSkills" class="col-sm-2 col-form-label">Şifre Tekrarla</label>
+
+        <div class="col-sm-10">
+
+            <input type="password" class="form-control" id="inputSkills" placeholder="Şifre Tekrarla">
+
+        </div>
+
+    </div>
+
+    <div class="form-group row">
+
+        <div class="offset-sm-2 col-sm-10">
+
+            <button type="submit" class="btn btn-danger">Bilgileri Güncelle</button>
+
+        </div>
+
+    </div>
+
+</form>
+}

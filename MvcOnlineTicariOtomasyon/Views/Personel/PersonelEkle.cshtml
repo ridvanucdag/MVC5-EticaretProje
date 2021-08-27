@@ -1,0 +1,36 @@
+﻿@model MvcOnlineTicariOtomasyon.Models.Siniflar.Personel
+@{
+    ViewBag.Title = "PersonelEkle";
+    Layout = "~/Views/Shared/AdminLayout.cshtml";
+}
+<br />
+<h2>Yeni Personel Ekle</h2>
+
+@using (Html.BeginForm("PersonelEkle","Personel",FormMethod.Post, new { enctype = "multipart/form-data" })) 
+{ 
+
+<form class="form-group" method="post">
+    @Html.LabelFor(x => x.PersonelAd)
+    @Html.TextBoxFor(x => x.PersonelAd, new { @class = "form-control" })
+    <br />
+    @Html.LabelFor(x => x.PersonelSoyad)
+    @Html.TextBoxFor(x => x.PersonelSoyad, new { @class = "form-control" })
+    <br />
+    @Html.LabelFor(x=>x.PersonelGorsel) <br />
+    <input type="file" name="PersonelGorsel"/> <br />
+    <br />
+    @Html.LabelFor(x => x.PersonelHakkinda)
+    @Html.TextBoxFor(x => x.PersonelHakkinda, new { @class = "form-control" })
+    <br />
+    @Html.LabelFor(x => x.PersonelAdres)
+    @Html.TextBoxFor(x => x.PersonelAdres, new { @class = "form-control" })
+    <br />
+    @Html.LabelFor(x => x.PersonelTelefon)
+    @Html.TextBoxFor(x => x.PersonelTelefon, new { @class = "form-control" })
+    <br />
+    @Html.LabelFor(x => x.Departman)
+    @Html.DropDownListFor(x => x.departmanid, (List<SelectListItem>)ViewBag.dgr1, new { @class = "form-control" })
+    <br />
+    <button class="btn btn-info">Personel Ekle</button>
+</form>
+}

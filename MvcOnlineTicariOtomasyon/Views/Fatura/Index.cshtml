@@ -1,0 +1,70 @@
+﻿@using MvcOnlineTicariOtomasyon.Models.Siniflar
+@model List<Faturalar>
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/AdminLayout.cshtml";
+}
+<br />
+<h2>Faturalar</h2>
+
+<table class="table table-hover">
+    <tr>
+        <th>Seri Sıra NO</th>
+        <th>Vergi Dairesi</th>
+        <th>Toplam</th>
+        <th>Teslim Alan</th>
+        <th>Teslim Eden</th>
+        <th>Saat</th>
+        <th>Tarih</th>
+        <th>Guncelle</th>
+        <th>Detaylar</th>
+        <th>Yeni Kalem</th>
+    </tr>
+    @foreach(var x in Model)
+    {
+<tr>
+    <td>@x.FaturaSeriNo @x.FaturaSiraNo</td>
+    <td>@x.VergiDairesi</td>
+    <td>@x.Toplam</td>
+    <td>@x.TeslimAlan</td>
+    <td>@x.TeslimEden</td>
+    <td>@x.Saat</td>
+    <td>@Convert.ToDateTime(x.Tarih).ToString("dd/MM/yyyy")</td>
+    <td><a href="/Fatura/FaturaGetir/@x.FaturaID" class="btn btn-success">Guncelle</a></td>
+    <td><a href="/Fatura/FaturaDetay/@x.FaturaID" class="btn btn-info">Detaylar</a></td>
+    <td><a href="/Fatura/FaturaDetay/@x.FaturaID" class="btn btn-info">Yeni Kalem</a></td>
+</tr>
+    }
+</table>
+<a href="/Fatura/FaturaEkle/" class="btn btn-primary">Yeni Fatura Ekle</a>
+<br />
+<br />
+<button type="button" class="btn btn-default" style="background-color:#077271; color:white" data-toggle="modal" data-target="#Modal1">PopUp Penceresi</button>
+
+<div class="modal" id="Modal1">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2 class="modal-title">PopUp diyalog Ekranı</h2>
+            </div>
+            <div class="modal-body">
+                <table class="table table-bordered">
+                    <tr>
+                        <th>Seri Sıra No</th>
+                        <th>Teslim Alan</th>
+                        <th>Teslim Eden</th>
+                    </tr>
+                    @foreach (var x in Model) 
+                    {
+                    <tr>
+                        <td>@x.FaturaSeriNo @x.FaturaSiraNo</td>
+                        <td>@x.TeslimAlan</td>
+                        <td>@x.TeslimEden</td>
+                    </tr>
+                    }
+                </table>
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">Kapat</button>
+            </div>
+        </div>
+    </div>
+</div>
